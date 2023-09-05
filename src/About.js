@@ -1,0 +1,317 @@
+import React from "react";
+import styled from "styled-components";
+import ShieldCheck from "./assets/ShieldCheck.svg";
+import CustomerSupport from "./assets/CustomerSupport.svg";
+import DailyWinCashIcon from "./assets/DailyWinCashIcon.svg";
+import EasyWithdrawalIcon from "./assets/EasyWithdrawalIcon.svg";
+import ReferAndEarnIcon from "./assets/ReferAndEarnIcon.svg";
+import GetFantasyStocksIcon from "./assets/GetFantasyStocksIcon.svg";
+import EarnOnEachReferralIcon from "./assets/EarnOnEachReferralIcon.svg";
+import LearnRealStockMarketIcon from "./assets/LearnRealStockMarketIcon.svg";
+import PlayRiskFreeIcon from "./assets/PlayRiskFreeIcon.svg";
+import EarningWithoutInvestingIcon from "./assets/EarningWithoutInvestingIcon.svg";
+import FunAndEntertainmentIcon from "./assets/FunAndEntertainmentIcon.svg";
+
+export const About = () => {
+  return (
+    <Container id="about">
+      <ContentContainer>
+        <FeaturesContainer>
+          <FeatureBox>
+            <FeatureImageContainer>
+              <FeatureImage src={ShieldCheck} />
+            </FeatureImageContainer>
+            <FeatureText>
+              Secure <FeatureTextGradient>100%</FeatureTextGradient> trusted
+            </FeatureText>
+          </FeatureBox>
+          <FeatureBox>
+            <FeatureImageContainer>
+              <FeatureImage src={CustomerSupport} />
+            </FeatureImageContainer>
+            <FeatureText>Customer Support</FeatureText>
+          </FeatureBox>
+          <FeatureBox>
+            <FeatureImageContainer>
+              <FeatureImage src={DailyWinCashIcon} />
+            </FeatureImageContainer>
+            <FeatureText>
+              Daily Win <FeatureTextGradient>Cash</FeatureTextGradient>
+            </FeatureText>
+          </FeatureBox>
+          <FeatureBox>
+            <FeatureImageContainer>
+              <FeatureImage src={EasyWithdrawalIcon} />
+            </FeatureImageContainer>
+            <FeatureText>Easy Withdrawals</FeatureText>
+          </FeatureBox>
+          <FeatureBox>
+            <FeatureImageContainer>
+              <FeatureImage src={ReferAndEarnIcon} />
+            </FeatureImageContainer>
+            <FeatureText>
+              Refer & <br />
+              Earn
+            </FeatureText>
+          </FeatureBox>
+        </FeaturesContainer>
+        <PrimaryHeaderText>
+          India’s one of the best trading gaming App
+        </PrimaryHeaderText>
+        <SecondaryHeaderText>
+          Learn and experience the stock market like never before
+        </SecondaryHeaderText>
+        <HighlightsContainer>
+          <HighlightOuterBox>
+            <HighlightInnerBox>
+              <HighlightContentBox>
+                <GradientIconContainer>
+                  <HighlightIcon src={GetFantasyStocksIcon} />
+                </GradientIconContainer>
+                <HighlightHeading>Get Fantasy stocks</HighlightHeading>
+                <HighlightText>
+                  Unlock the world of endless possibilities with our fantasy
+                  stocks, where you can trade, strategize, and experience.
+                </HighlightText>
+              </HighlightContentBox>
+            </HighlightInnerBox>
+          </HighlightOuterBox>
+          <HighlightOuterBox>
+            <HighlightInnerBox>
+              <HighlightContentBox>
+                <GradientIconContainer>
+                  <HighlightIcon src={EarnOnEachReferralIcon} />
+                </GradientIconContainer>
+                <HighlightHeading>Earn on each referral</HighlightHeading>
+                <HighlightText>
+                  Refer friends and earn money with every successful referral,
+                  making your journey with us even more rewarding.
+                </HighlightText>
+              </HighlightContentBox>
+            </HighlightInnerBox>
+          </HighlightOuterBox>
+          <HighlightOuterBox>
+            <HighlightInnerBox>
+              <HighlightContentBox>
+                <GradientIconContainer>
+                  <HighlightIcon src={LearnRealStockMarketIcon} />
+                </GradientIconContainer>
+                <HighlightHeading>Learn Real stock market</HighlightHeading>
+                <HighlightText>
+                  Embark on an exciting journey of learning the real stock
+                  market while playing our engaging game.
+                </HighlightText>
+              </HighlightContentBox>
+            </HighlightInnerBox>
+          </HighlightOuterBox>
+          <HighlightOuterBox>
+            <HighlightInnerBox>
+              <HighlightContentBox>
+                <GradientIconContainer>
+                  <HighlightIcon src={PlayRiskFreeIcon} />
+                </GradientIconContainer>
+                <HighlightHeading>Play risk free</HighlightHeading>
+                <HighlightText>
+                  Trading fearlessly with our risk-free trading app, where you
+                  can learn, experiment, and perfect your strategies.
+                </HighlightText>
+              </HighlightContentBox>
+            </HighlightInnerBox>
+          </HighlightOuterBox>
+          <HighlightOuterBox>
+            <HighlightInnerBox>
+              <HighlightContentBox>
+                <GradientIconContainer>
+                  <HighlightIcon src={EarningWithoutInvestingIcon} />
+                </GradientIconContainer>
+                <HighlightHeading>Earning without investing</HighlightHeading>
+                <HighlightText>
+                  Zero investment required through our app, where you can learn,
+                  trade, and thrive without spending a penny.
+                </HighlightText>
+              </HighlightContentBox>
+            </HighlightInnerBox>
+          </HighlightOuterBox>
+          <HighlightOuterBox>
+            <HighlightInnerBox>
+              <HighlightContentBox>
+                <GradientIconContainer>
+                  <HighlightIcon src={FunAndEntertainmentIcon} />
+                </GradientIconContainer>
+                <HighlightHeading>Fun & Entertainment </HighlightHeading>
+                <HighlightText>
+                  Endless entertainment with our intriguing trading app, which
+                  features exhilarating and market exploration!
+                </HighlightText>
+              </HighlightContentBox>
+            </HighlightInnerBox>
+          </HighlightOuterBox>
+        </HighlightsContainer>
+      </ContentContainer>
+    </Container>
+  );
+};
+
+const Container = styled.div`
+  background: #fff;
+  height: 1050px;
+`;
+
+const ContentContainer = styled.div`
+  margin: 0 auto;
+  overflow: hidden;
+  width: 1258px;
+  margin-top: 149px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const FeaturesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 985px;
+  margin-bottom: 91px;
+`;
+
+const FeatureBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const FeatureImageContainer = styled.div`
+  height: 90px;
+  width: 90px;
+  border: 2px solid #e4e4e4;
+  border-radius: 45px;
+
+  /* Flexbox styles to center the image */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+`;
+
+const FeatureImage = styled.img`
+  height: 42px;
+  width: 42px;
+`;
+
+const FeatureText = styled.span`
+  color: #343434;
+  text-align: center;
+  font-family: "Chivo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+  width: 105px;
+  margin-top: 10px;
+`;
+
+const FeatureTextGradient = styled.span`
+  background: linear-gradient(153deg, #ff7d3f 0%, #9809f9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Chivo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px;
+`;
+
+const PrimaryHeaderText = styled.span`
+  color: #343434;
+  text-align: center;
+  font-family: Chivo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 74px; /* 154.167% */
+`;
+
+const SecondaryHeaderText = styled.span`
+  color: #343434;
+  text-align: center;
+  font-family: Chivo;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 133.333% */
+`;
+
+const HighlightsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const HighlightOuterBox = styled.div`
+  width: 410px;
+  height: 278px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background-color: #f6f6f6;
+  margin-top: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
+const HighlightInnerBox = styled.div`
+  width: 394px;
+  height: 262px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border-radius: 14px;
+`;
+
+const HighlightContentBox = styled.div`
+  flex-direction: column;
+  display: flex;
+  padding-top: 24px;
+  padding-left: 24px;
+`;
+
+const GradientIconContainer = styled.div`
+  width: 78px;
+  height: 78px;
+  border-radius: 39px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    127deg,
+    #ff8100 29.31%,
+    #e233f1 66.2%,
+    #8f00ff 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const HighlightHeading = styled.span`
+  color: #343434;
+  font-family: "Chivo";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 145.455% */
+  margin-top: 16px;
+`;
+
+const HighlightText = styled.span`
+  color: rgba(52, 52, 52, 0.85);
+  font-family: "Chivo";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  margin-top: 8px;
+`;
+
+const HighlightIcon = styled.img`
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+`;
