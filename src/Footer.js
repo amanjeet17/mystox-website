@@ -35,7 +35,7 @@ const Footer = () => {
             <SocialButton src={InstagramIcon} />
           </SocialButtonsContainer>
           <JargonContainer>
-            <JargonText>Privacy & Policy</JargonText>
+            <JargonText href="http://docs.mystox.co.in/v1/privacy-policy.pdf">Privacy & Policy</JargonText>
             <JargonText href="http://docs.mystox.co.in/v1/terms-and-condition.pdf">Terms & Condition</JargonText>
           </JargonContainer>
         </HalfContainerRight>
