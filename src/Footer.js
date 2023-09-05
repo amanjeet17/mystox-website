@@ -36,7 +36,7 @@ const Footer = () => {
           </SocialButtonsContainer>
           <JargonContainer>
             <JargonText>Privacy & Policy</JargonText>
-            <JargonText>Terms & Condition</JargonText>
+            <JargonText href="http://docs.mystox.co.in/v1/terms-and-condition.pdf">Terms & Condition</JargonText>
           </JargonContainer>
         </HalfContainerRight>
       </ContentContainer>
@@ -178,7 +178,7 @@ const JargonContainer = styled.div`
   margin-top: 125px;
 `;
 
-const JargonText = styled.div`
+const JargonText = styled.a`
   color: #fff;
   text-align: right;
   font-family: Chivo;
