@@ -33,9 +33,9 @@ const HowToPlay = () => {
             <ScreenShotImage src={HowToPlayScreenshot3} />
           </ScreenShotContainer>
         </ScreenshotArray>
-        <YoutubeVideoContainer>
+        {/* <YoutubeVideoContainer>
           <YouTubeVideo src={`https://www.youtube.com/embed/34Na4j8AVgA`} />
-        </YoutubeVideoContainer>
+        </YoutubeVideoContainer> */}
       </ContentContainer>
     </Container>
   );
@@ -45,7 +45,6 @@ export default HowToPlay;
 
 const Container = styled.div`
   background: #eceeed;
-  height: 1619px;
   background-image: url(${HowToPlayBg});
 `;
 

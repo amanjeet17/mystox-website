@@ -14,7 +14,7 @@ function App() {
     <HeaderAndCarousel/>
     <About/>
     <LevelsOfPlay/>
-    <SelectMarketSegment/>
+    {/* <SelectMarketSegment/> */}
     <HowToPlay/>
     <FAQs/>
     <Footer/>

@@ -12,35 +12,77 @@ const FAQs = () => {
           <HeaderText>Frequently asked questions</HeaderText>
         </TextContainer>
         <FAQObject
-          question={'What is the "earn and refer" programme all about?'}
+          question={'What is fantasy trading?'}
+          answer={
+            "Fantasy trading is a simulated trading experience that allows users to buy and sell virtual stocks or assets without using real money. It's a risk-free way to practice trading and learn about the financial markets."
+          }
+        />
+        <FAQObject
+          question={"How does fantasy trading work?"}
+          answer={
+            "Typically, fantasy trading platforms offer both free and premium (paid) options. Users can choose to participate for free or subscribe to premium plans for additional features and benefits."
+          }
+        />
+        <FAQObject
+          question={"Is there a cost to join or participate?"}
+          answer={
+            "Rewards in fantasy trading contests can vary but often include cash prizes, gift cards, or other incentives. The specific rewards are usually outlined in the contest details."
+          }
+        />
+        <FAQObject
+          question={"What can I win in fantasy trading contests?"}
           answer={
             "In Bull type, you will choose stocks for your portfolio, which you think have will increasing value during contest duration."
           }
         />
         <FAQObject
-          question={"What is Bear type contest?"}
+          question={"How do I create a fantasy portfolio?"}
           answer={
-            "In Bull type, you will choose stocks for your portfolio, which you think have will increasing value during contest duration."
+            "To create a fantasy portfolio, you select virtual stocks or assets from the available options on the platform. These virtual assets mirror real assets' performance in the market."
+          }
+        />
+         <FAQObject
+          question={"Are the market data and prices real-time?"}
+          answer={
+            "Yes, most fantasy trading platforms use real-time market data and prices to ensure a realistic trading experience."
+          }
+        />
+         <FAQObject
+          question={"Is fantasy trading suitable for beginners?"}
+          answer={
+            "Yes, fantasy trading is an excellent way for beginners to learn about trading without risking real money. It's a safe environment to practice and gain confidence."
+          }
+        />
+         <FAQObject
+          question={"Do I need any prior trading experience?"}
+          answer={
+            "No prior trading experience is necessary. Fantasy trading platforms are designed to be user-friendly and accessible to traders of all skill levels."
+          }
+        />
+         <FAQObject
+          question={"Can I compete in multiple contests simultaneously?"}
+          answer={
+            "Yes, users to participate in multiple contests at the same time, offering a variety of trading scenarios."
+          }
+        />
+         <FAQObject
+          question={"How do I withdraw my winnings?"}
+          answer={
+            "Users can withdraw their winnings through bank transfers after completing KYC."
           }
         />
         <FAQObject
-          question={"What is Bear type contest?"}
-          answer={
-            "In Bull type, you will choose stocks for your portfolio, which you think have will increasing value during contest duration."
-          }
-        />
-        <FAQObject
-          question={"What is Bull type contest?"}
-          answer={
-            "In Bull type, you will choose stocks for your portfolio, which you think have will increasing value during contest duration."
-          }
-        />
-        <FAQObject
-          question={"Can I refer someone who lives in a different country?"}
-          answer={
-            "In Bull type, you will choose stocks for your portfolio, which you think have will increasing value during contest duration."
-          }
-        />
+         question={"What happens if I run out of virtual funds in my portfolio?"}
+         answer={
+          "User can increase their trading funds from funds section inside trading contest"
+         }
+       />
+       <FAQObject
+        question={"How can I contact customer support for assistance?"}
+        answer={
+          "You can usually contact customer support through email, or through whatsap chat."
+        }
+      />
       </ContentContainer>
     </Container>
   );

@@ -68,7 +68,7 @@ export const About = () => {
                 <GradientIconContainer>
                   <HighlightIcon src={GetFantasyStocksIcon} />
                 </GradientIconContainer>
-                <HighlightHeading>Get Fantasy stocks</HighlightHeading>
+                <HighlightHeading>Experience fantasy Trading</HighlightHeading>
                 <HighlightText>
                   Unlock the world of endless possibilities with our fantasy
                   stocks, where you can trade, strategize, and experience.
@@ -96,10 +96,9 @@ export const About = () => {
                 <GradientIconContainer>
                   <HighlightIcon src={LearnRealStockMarketIcon} />
                 </GradientIconContainer>
-                <HighlightHeading>Learn Real stock market</HighlightHeading>
+                <HighlightHeading>Craft Winning Portfolio</HighlightHeading>
                 <HighlightText>
-                  Embark on an exciting journey of learning the real stock
-                  market while playing our engaging game.
+                Your journey to victory begins here. Skillfully assemble portfolios that outshine the competition.
                 </HighlightText>
               </HighlightContentBox>
             </HighlightInnerBox>
@@ -110,10 +109,9 @@ export const About = () => {
                 <GradientIconContainer>
                   <HighlightIcon src={PlayRiskFreeIcon} />
                 </GradientIconContainer>
-                <HighlightHeading>Play risk free</HighlightHeading>
+                <HighlightHeading>Risk Free Trading</HighlightHeading>
                 <HighlightText>
-                  Trading fearlessly with our risk-free trading app, where you
-                  can learn, experiment, and perfect your strategies.
+                Dive into trading without financial risk. Test your strategies and enjoy the thrill of trading without losing a penny.
                 </HighlightText>
               </HighlightContentBox>
             </HighlightInnerBox>
@@ -124,10 +122,9 @@ export const About = () => {
                 <GradientIconContainer>
                   <HighlightIcon src={EarningWithoutInvestingIcon} />
                 </GradientIconContainer>
-                <HighlightHeading>Earning without investing</HighlightHeading>
+                <HighlightHeading>Live Markets, Virtual Portfolios, Genuine Rewards</HighlightHeading>
                 <HighlightText>
-                  Zero investment required through our app, where you can learn,
-                  trade, and thrive without spending a penny.
+                Engage in real market scenarios and convert your virtual portfolio skills into genuine rewards.
                 </HighlightText>
               </HighlightContentBox>
             </HighlightInnerBox>
@@ -138,10 +135,9 @@ export const About = () => {
                 <GradientIconContainer>
                   <HighlightIcon src={FunAndEntertainmentIcon} />
                 </GradientIconContainer>
-                <HighlightHeading>Fun & Entertainment </HighlightHeading>
+                <HighlightHeading>Turn Fantasy Into Reality </HighlightHeading>
                 <HighlightText>
-                  Endless entertainment with our intriguing trading app, which
-                  features exhilarating and market exploration!
+                Refine your trading skills on our platform and apply them confidently to succeed in the real market.
                 </HighlightText>
               </HighlightContentBox>
             </HighlightInnerBox>
