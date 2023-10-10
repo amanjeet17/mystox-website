@@ -6,8 +6,10 @@ import FacebookIcon from "./assets/FacebookIcon.svg";
 import TwitterIcon from "./assets/TwitterIcon.svg";
 import InstagramIcon from "./assets/InstagramIcon.svg";
 import FooterSpiral from "./assets/FooterSpiral.svg";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate= useNavigate()
   return (
     <Container id="contact_us" >
       <ContentContainer>
@@ -35,7 +37,7 @@ const Footer = () => {
             <SocialButton src={InstagramIcon} />
           </SocialButtonsContainer>
           <JargonContainer>
-            <JargonText href="http://docs.mystox.co.in/v1/privacy-policy.pdf">Privacy & Policy</JargonText>
+            <JargonText onClick={()=>navigate('/policy')}>Privacy & Policy</JargonText>
             <JargonText href="http://docs.mystox.co.in/v1/terms-and-condition.pdf">Terms & Condition</JargonText>
           </JargonContainer>
         </HalfContainerRight>
@@ -188,4 +190,5 @@ const JargonText = styled.a`
   line-height: 150%; /* 24px */
   letter-spacing: -0.32px;
   margin-left: 38px;
+  cursor:pointer;
 `;

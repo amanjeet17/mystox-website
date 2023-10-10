@@ -8,9 +8,11 @@ import SelectMarketSegment from "./SelectMarketSegment";
 import HowToPlay from "./HowToPlay";
 import FAQs from "./FAQs";
 import Footer from "./Footer";
-function App() {
-  return (
-   <div>
+import { Route,Routes, BrowserRouter } from "react-router-dom";
+import PrivacyPolicy from "./policy";
+const Main = ()=>{
+  return(
+<div>
     <HeaderAndCarousel/>
     <About/>
     <LevelsOfPlay/>
@@ -19,6 +21,20 @@ function App() {
     <FAQs/>
     <Footer/>
    </div>
+  )
+}
+
+function App() {
+  return (
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path="" element={<Main/>}/>
+        <Route path="/policy" element={<PrivacyPolicy/>}/>
+      </Routes>
+      </BrowserRouter>
+
+    </div>
   );
 }
 
