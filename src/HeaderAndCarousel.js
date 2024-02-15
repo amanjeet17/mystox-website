@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,8 @@ import Carousel3 from "./assets/Carousel3.svg";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.css";
 const HeaderAndCarousel = () => {
+  const isMobile = window.innerWidth<500
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     console.log("scrollcalled", element);
@@ -19,12 +21,31 @@ const HeaderAndCarousel = () => {
     }
   };
 
+  const onPlayDownload = ()=>{
+    console.log('onPlayDownload')
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+     if (userAgent.includes("iPhone") || userAgent.includes("Mac")) {
+      window.open(
+        "https://apps.apple.com/in/app/mystox-fantasy-stock-gaming/id1668213556",
+        '_blank' // <- This is what makes it open in a new window.
+      )
+   } else {
+    window.open(
+      "https://play.google.com/store/apps/details?id=com.mystox",
+      '_blank' // <- This is what makes it open in a new window.
+    )
+   }
+  }
+  useEffect(()=>{
+    // onPlayDownload()
+  },[])
+
   return (
     <Container id="home">
       <ContentContainer>
-        <TopNavContainer>
+        <TopNavContainer isMobile={isMobile}>
           <MainHeaderText>Mystox</MainHeaderText>
-          <HeaderButtonBox>
+          <HeaderButtonBox isMobile={isMobile}>
             <SecondaryHeaderText
               onClick={() => {
                 scrollToSection("home");
@@ -60,7 +81,7 @@ const HeaderAndCarousel = () => {
             >
               Contact us
             </SecondaryHeaderText>
-            <PlayNowButton src={PlayNowButtonImg} alt="Play Now" />
+            <PlayNowButton src={PlayNowButtonImg} onClick={onPlayDownload} alt="Play Now" />
           </HeaderButtonBox>
         </TopNavContainer>
       </ContentContainer>
@@ -70,7 +91,7 @@ const HeaderAndCarousel = () => {
           autoPlay
           showIndicators={false}
           onChange={(...a) => console.log("onChange", a)}
-          onClickItem={(...a) => console.log("onClickItem", a)}
+          onClickItem={onPlayDownload}
           onClickThumb={(...a) => console.log("onClickThumb", a)}
           swipeable
           infiniteLoop
@@ -78,7 +99,7 @@ const HeaderAndCarousel = () => {
           showStatus={false}
         >
           <div>
-            <img src={Carousel1} />
+            <img src={Carousel1}  />
           </div>
           <div>
             <img src={Carousel2} />
@@ -96,7 +117,6 @@ export default HeaderAndCarousel;
 
 const Container = styled.div`
   background: #170038;
-  height: 739px;
   /* background-image: url(${CarouselBG}); */
 `;
 
@@ -110,10 +130,10 @@ const TopNavContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 36px;
+  padding-top: ${props=>props.isMobile ?0:'30px'};
   margin: 0 auto;
   overflow: hidden;
-  width: 1258px;
+  width: 80%;
 `;
 
 const MainHeaderText = styled.span`
@@ -127,7 +147,7 @@ const MainHeaderText = styled.span`
 `;
 
 const HeaderButtonBox = styled.div`
-  display: flex;
+  display: ${props=>props.isMobile ? 'none':'flex'};
   flex-direction: row;
 `;
 
@@ -143,4 +163,5 @@ const SecondaryHeaderText = styled.span`
 
 const PlayNowButton = styled.img`
   margin-top: -16px;
+  cursore:pointer;
 `;

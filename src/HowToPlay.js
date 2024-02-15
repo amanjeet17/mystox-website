@@ -6,12 +6,13 @@ import HowToPlayScreenshot2 from "./assets/HowToPlayScreenshot2.svg";
 import HowToPlayScreenshot3 from "./assets/HowToPlayScreenshot3.svg";
 
 const HowToPlay = () => {
+  const isMobile = window.innerWidth<500
   return (
     <Container id='how_to_play'>
       <ContentContainer>
         <TextContainer>
           <HeaderText>How to play</HeaderText>
-          <SubHeaderText>
+          <SubHeaderText isMobile={isMobile}>
             Enter into the thrilling world of Gamified Stock Market, a
             strategy-based stock market game wherein you can create a virtual
             portfolio from real stock market. Create your portfolio based on
@@ -33,8 +34,8 @@ const HowToPlay = () => {
             <ScreenShotImage src={HowToPlayScreenshot3} />
           </ScreenShotContainer>
         </ScreenshotArray>
-        {/* <YoutubeVideoContainer>
-          <YouTubeVideo src={`https://www.youtube.com/embed/34Na4j8AVgA`} />
+        {/* <YoutubeVideoContainer isMobile={isMobile}>
+          <YouTubeVideo isMobile={isMobile} src={`https://drive.google.com/uc?export=download&id=1tbdgTmlV9kgTwWZw85DKsu4yK_TZoUmt`} />
         </YoutubeVideoContainer> */}
       </ContentContainer>
     </Container>
@@ -50,9 +51,8 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   margin: 0 auto;
-  overflow: hidden;
-  width: 1258px;
-  margin-top: 149px;
+  width: 100%;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,11 +61,10 @@ const ContentContainer = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
-  width: 100%;
+  width: 80%;
 `;
 
-const HeaderText = styled.span`
+const HeaderText = styled.div`
   color: #343434;
   text-align: center;
   font-family: Chivo;
@@ -76,19 +75,20 @@ const HeaderText = styled.span`
   margin-top: 92px;
 `;
 
-const SubHeaderText = styled.span`
+const SubHeaderText = styled.div`
   color: #242424;
   font-family: Chivo;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 32px; /* 133.333% */
-  width: 917px;
+  width: 100%
 `;
 
 const ScreenshotArray = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap:wrap;
   justify-content: space-around;
   align-items: center;
   margin-top: 72px;
@@ -119,7 +119,7 @@ const ScreenShotImage = styled.img`
 `;
 
 const YoutubeVideoContainer = styled.div`
-  width: 815px;
+  width: ${props=>props.isMobile ?'100%' :'815px'};
   height: 463px;
   flex-shrink: 0;
   border-radius: 16px;
@@ -131,7 +131,7 @@ const YoutubeVideoContainer = styled.div`
   align-items: center;
 `;
 const YouTubeVideo = styled.iframe`
-  width: 799px;
+  width: ${props=>props.isMobile ?'100%' :'800px'};
   height: 447px;
   flex-shrink: 0;
   border-radius: 15px;

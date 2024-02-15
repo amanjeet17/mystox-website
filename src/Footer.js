@@ -9,6 +9,7 @@ import FooterSpiral from "./assets/FooterSpiral.svg";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const isMobile = window.innerWidth<500
   const navigate= useNavigate()
   return (
     <Container id="contact_us" >
@@ -26,7 +27,7 @@ const Footer = () => {
             and rewarding trading experiences.
           </VisionText>
         </HalfContainerLeft>
-        <HalfContainerRight>
+        <HalfContainerRight isMobile={isMobile}>
           <ContactUsContainer>
             <ContactUsHeader>Contact us</ContactUsHeader>
             <ContactUsEmail>Email : support@mystox.com</ContactUsEmail>
@@ -36,8 +37,8 @@ const Footer = () => {
             <SocialButton src={TwitterIcon} />
             <SocialButton src={InstagramIcon} />
           </SocialButtonsContainer>
-          <JargonContainer>
-            <JargonText onClick={()=>navigate('/policy')}>Privacy & Policy</JargonText>
+          <JargonContainer isMobile={isMobile}>
+            <JargonText onClick={()=>navigate('/privacy-policy')}>Privacy & Policy</JargonText>
             <JargonText href="http://docs.mystox.co.in/v1/terms-and-condition.pdf">Terms & Condition</JargonText>
           </JargonContainer>
         </HalfContainerRight>
@@ -51,16 +52,17 @@ export default Footer;
 const Container = styled.div`
   /* background: linear-gradient(202deg, #231f2d 0%, #2c1a3c 100%); */
   background-color: #2c1a3c;
-  height: 411px;
+  min-height: 411px;
   background-image: url(${FooterSpiral});
+  flex-wrap: wrap;
 `;
 
 const ContentContainer = styled.div`
   margin: 0 auto;
   overflow: hidden;
-  width: 1258px;
-  margin-top: 149px;
+  width: 80%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
 `;
@@ -74,12 +76,10 @@ const HalfContainerLeft = styled.div`
 `;
 
 const HalfContainerRight = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
   height: 100%;
+  align-items: ${props => props.isMobile ?'start':'end'};
 `;
 const DownloadText = styled.span`
   color: #fff;
@@ -96,6 +96,7 @@ const DownloadAppsContainer = styled.div`
   margin-top: 28px;
   justify-content: flex-start;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
 `;
@@ -105,15 +106,15 @@ const DownloadAppButton = styled.img`
   height: 59.275px;
   flex-shrink: 0;
   margin-right: 16px;
+  margin-bottom:20px;
 `;
 
 const MyStoxText = styled.span`
   color: #fff;
-  font-family: Chivo;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
-  line-height: 52px; /* 152.941% */
+  line-height: 52px; 
   letter-spacing: -1.02px;
   margin-top: 31px;
 `;
@@ -123,7 +124,7 @@ const VisionText = styled.span`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 22px; /* 157.143% */
+  line-height: 22px; 
   width: 364px;
 `;
 
@@ -135,12 +136,12 @@ const ContactUsContainer = styled.div`
 `;
 
 const ContactUsHeader = styled.span`
-  color: var(--text, #fff);
+  color:  #fff;
   font-family: Chivo;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 24px; 
   letter-spacing: -0.32px;
 `;
 
@@ -177,7 +178,7 @@ const JargonContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 125px;
+  margin-top: ${props=>props.isMobile ? '25px':'125px'};
 `;
 
 const JargonText = styled.a`
@@ -189,6 +190,6 @@ const JargonText = styled.a`
   font-weight: 400;
   line-height: 150%; /* 24px */
   letter-spacing: -0.32px;
-  margin-left: 38px;
+  margin-right: 20px;
   cursor:pointer;
 `;

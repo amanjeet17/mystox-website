@@ -12,11 +12,11 @@ import { Route,Routes, BrowserRouter } from "react-router-dom";
 import PrivacyPolicy from "./policy";
 const Main = ()=>{
   return(
-<div>
+  <div>
     <HeaderAndCarousel/>
     <About/>
     <LevelsOfPlay/>
-    {/* <SelectMarketSegment/> */}
+    <SelectMarketSegment/>
     <HowToPlay/>
     <FAQs/>
     <Footer/>
@@ -31,6 +31,7 @@ function App() {
       <Routes>
         <Route path="" element={<Main/>}/>
         <Route path="/policy" element={<PrivacyPolicy/>}/>
+        <Route path="/privacy-policy/" element={<PrivacyPolicy/>}/>
       </Routes>
       </BrowserRouter>
 

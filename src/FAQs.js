@@ -5,6 +5,7 @@ import FAQExpanded from "./assets/FAQExpanded.svg";
 import { useCollapse } from "react-collapsed";
 
 const FAQs = () => {
+  const isMobile = window.innerWidth<500
   return (
     <Container>
       <ContentContainer>
@@ -95,7 +96,7 @@ const Container = styled.div`
 const ContentContainer = styled.div`
   margin: 0 auto;
   overflow: hidden;
-  width: 1258px;
+  width: ${(props)=>props.isMobile ? '100%' :'85%'};
   margin-top: 149px;
   display: flex;
   flex-direction: column;
@@ -144,10 +145,10 @@ const FAQContentContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  border: 8px solid #f6f6f6;
-  padding: 36px 24px;
+  border: 5px solid #f6f6f6;
+  padding: 15px;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 10px;
   margin-top: 16px;
 `;
 
@@ -162,7 +163,7 @@ const FAQHeaderContent = styled.div`
 const FAQHeaderText = styled.span`
   color: #343434;
   font-family: Chivo;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -177,7 +178,7 @@ const FAQButtonImage = styled.img`
 const FAQText = styled.span`
   color: rgba(52, 52, 52, 0.85);
   font-family: Chivo;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 155.556% */

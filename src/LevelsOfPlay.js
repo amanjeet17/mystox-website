@@ -6,47 +6,46 @@ export const LevelsOfPlay = () => {
   return (
     <Container id='levels_of_play'>
       <ContentContainer>
+        <div style={{display:'flex',flexDirection:'column'}}>
+
         <HeaderText>Levels of Play</HeaderText>
         <SubHeaderText>
-          our app offers a dynamic journey that caters to traders of all levels
+          Our app offers a dynamic journey that caters to traders of all levels
           of expertise.
         </SubHeaderText>
-        <div style={{display:'flex',marginTop:'50px'}}>
+        </div>
 
-        <SubHeaderText>
-          1.Beginner
+        <div style={{marginTop:'30px'}}>
+
+        <SubHeaderText style={{fontSize:'32px'}}>
+          Beginner
         </SubHeaderText>
-        <SubHeaderText>
-          {" "}:{" "}
-        </SubHeaderText>
+        </div>
+
+      
         <SubHeaderText>
          This contest level is designed for users to test their skills of stock selection and learn from their mistakes by reviewing to there peers
         </SubHeaderText>
-        </div>
-        <div style={{display:'flex',marginTop:'30px',marginBottom:'30px'}}>
+        <div style={{marginTop:'30px'}} >
 
-        <SubHeaderText>
-          2.Amateur
+        <SubHeaderText style={{fontSize:'32px'}}>
+          Amateur
         </SubHeaderText>
-        <SubHeaderText>
-          {" "}:{" "}
-        </SubHeaderText>
+        </div>
+
         <SubHeaderText>
         This contest level is designed for users to test their skills of actual portfolio creation which involves not only selecting the right stock but also allocating right amount of stock quanity.
         </SubHeaderText>
-        </div>
-        <div style={{display:'flex',marginBottom:'50px'}}>
+        <div style={{marginTop:'30px'}} >
 
-        <SubHeaderText>
-          3.Expert
+        <SubHeaderText style={{fontSize:'32px'}}>
+          Expert
         </SubHeaderText>
-        <SubHeaderText>
-          {" "}:{" "}
-        </SubHeaderText>
+        </div>
+
         <SubHeaderText>
         Enter into the thrilling world of Fantasy sports, a strategy-based online sports game wherein you can create a virtual team of real players playing in real life matches. Create your team to win points based on all the players' performance in a live game.
         </SubHeaderText>
-        </div>
 
       </ContentContainer>
     </Container>
@@ -56,30 +55,29 @@ export const LevelsOfPlay = () => {
 const Container = styled.div`
   background: #231f2d;
   background-image: url(${LevelsOfPlayIcon});
+  padding: 30px 0;
 `;
 
 const ContentContainer = styled.div`
   margin: 0 auto;
   overflow: hidden;
-  width: 1258px;
-  margin-top: 149px;
-  display: flex;
+  width: 80%;
   flex-direction: column;
   align-items: center;
 `;
+
 
 const HeaderText = styled.span`
   color: #fff;
   text-align: center;
   font-family: Chivo;
-  font-size: 48px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 900;
   line-height: 74px; /* 154.167% */
-  margin-top: 54px;
 `;
 
-const SubHeaderText = styled.span`
+const SubHeaderText = styled.div`
   color: #fff;
   font-family: Chivo;
   font-size: 24px;

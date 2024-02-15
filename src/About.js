@@ -13,10 +13,11 @@ import EarningWithoutInvestingIcon from "./assets/EarningWithoutInvestingIcon.sv
 import FunAndEntertainmentIcon from "./assets/FunAndEntertainmentIcon.svg";
 
 export const About = () => {
+  const isMobile = window.innerWidth<500
   return (
     <Container id="about">
       <ContentContainer>
-        <FeaturesContainer>
+        <FeaturesContainer style={{display:"none"}}>
           <FeatureBox>
             <FeatureImageContainer>
               <FeatureImage src={ShieldCheck} />
@@ -55,14 +56,18 @@ export const About = () => {
             </FeatureText>
           </FeatureBox>
         </FeaturesContainer>
+        <div style={{margin:'50px 0'}}>
+
         <PrimaryHeaderText>
           India’s one of the best trading gaming App
         </PrimaryHeaderText>
         <SecondaryHeaderText>
           Learn and experience the stock market like never before
         </SecondaryHeaderText>
+        </div>
+
         <HighlightsContainer>
-          <HighlightOuterBox>
+          <HighlightOuterBox isMobile={isMobile}>
             <HighlightInnerBox>
               <HighlightContentBox>
                 <GradientIconContainer>
@@ -76,7 +81,7 @@ export const About = () => {
               </HighlightContentBox>
             </HighlightInnerBox>
           </HighlightOuterBox>
-          <HighlightOuterBox>
+          <HighlightOuterBox isMobile={isMobile}>
             <HighlightInnerBox>
               <HighlightContentBox>
                 <GradientIconContainer>
@@ -90,7 +95,7 @@ export const About = () => {
               </HighlightContentBox>
             </HighlightInnerBox>
           </HighlightOuterBox>
-          <HighlightOuterBox>
+          <HighlightOuterBox isMobile={isMobile}>
             <HighlightInnerBox>
               <HighlightContentBox>
                 <GradientIconContainer>
@@ -103,7 +108,7 @@ export const About = () => {
               </HighlightContentBox>
             </HighlightInnerBox>
           </HighlightOuterBox>
-          <HighlightOuterBox>
+          <HighlightOuterBox isMobile={isMobile}>
             <HighlightInnerBox>
               <HighlightContentBox>
                 <GradientIconContainer>
@@ -116,7 +121,7 @@ export const About = () => {
               </HighlightContentBox>
             </HighlightInnerBox>
           </HighlightOuterBox>
-          <HighlightOuterBox>
+          <HighlightOuterBox isMobile={isMobile}>
             <HighlightInnerBox>
               <HighlightContentBox>
                 <GradientIconContainer>
@@ -129,7 +134,7 @@ export const About = () => {
               </HighlightContentBox>
             </HighlightInnerBox>
           </HighlightOuterBox>
-          <HighlightOuterBox>
+          <HighlightOuterBox isMobile={isMobile}>
             <HighlightInnerBox>
               <HighlightContentBox>
                 <GradientIconContainer>
@@ -150,31 +155,25 @@ export const About = () => {
 
 const Container = styled.div`
   background: #fff;
-  height: 1050px;
 `;
 
 const ContentContainer = styled.div`
-  margin: 0 auto;
-  overflow: hidden;
-  width: 1258px;
-  margin-top: 149px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
 `;
 
 const FeaturesContainer = styled.div`
   display: flex;
+  flex-wrap:wrap;
   flex-direction: row;
   justify-content: space-around;
-  width: 985px;
-  margin-bottom: 91px;
+  width: 100%;
 `;
 
 const FeatureBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 `;
 const FeatureImageContainer = styled.div`
   height: 90px;
@@ -193,7 +192,7 @@ const FeatureImage = styled.img`
   width: 42px;
 `;
 
-const FeatureText = styled.span`
+const FeatureText = styled.div`
   color: #343434;
   text-align: center;
   font-family: "Chivo";
@@ -217,17 +216,16 @@ const FeatureTextGradient = styled.span`
   line-height: 20px;
 `;
 
-const PrimaryHeaderText = styled.span`
+const PrimaryHeaderText = styled.div`
   color: #343434;
   text-align: center;
-  font-family: Chivo;
   font-size: 48px;
   font-style: normal;
   font-weight: 900;
-  line-height: 74px; /* 154.167% */
+  line-height: 74px;
 `;
 
-const SecondaryHeaderText = styled.span`
+const SecondaryHeaderText = styled.div`
   color: #343434;
   text-align: center;
   font-family: Chivo;
@@ -240,25 +238,24 @@ const SecondaryHeaderText = styled.span`
 const HighlightsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 0 auto;
+  justify-content: space-evenly;
 `;
 
 const HighlightOuterBox = styled.div`
-  width: 410px;
-  height: 278px;
-  flex-shrink: 0;
-  border-radius: 16px;
+  padding:10px;
+  border-radius: 14px;
   background-color: #f6f6f6;
-  margin-top: 40px;
+  margin: 10px;
   align-items: center;
   display: flex;
   justify-content: center;
+  width: ${props => props.isMobile ? '100%': '25%'};
 `;
 
 const HighlightInnerBox = styled.div`
-  width: 394px;
-  height: 262px;
-  flex-shrink: 0;
+  width: 100%;
+  min-height: 270px;
   background-color: #fff;
   border-radius: 14px;
 `;
@@ -266,8 +263,7 @@ const HighlightInnerBox = styled.div`
 const HighlightContentBox = styled.div`
   flex-direction: column;
   display: flex;
-  padding-top: 24px;
-  padding-left: 24px;
+  padding: 24px;
 `;
 
 const GradientIconContainer = styled.div`
