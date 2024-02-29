@@ -14,6 +14,48 @@ import FunAndEntertainmentIcon from "./assets/FunAndEntertainmentIcon.svg";
 
 export const About = () => {
   const isMobile = window.innerWidth<500
+  return(
+    <div className="about-info">
+      <div className="container">
+        <div className="d-flex flex-row justify-content-around">
+        <div className="d-flex flex-column align-items-center">
+        <div className="info-box">
+            <img src={GetFantasyStocksIcon} width="100%" />
+        </div>  
+            <div className="info-text">Fantasy Portfolio</div>
+        </div>  
+        <div className="d-flex flex-column align-items-center ">
+            <div className="info-box">
+            <img src={EarnOnEachReferralIcon} width="100%" />
+            </div>
+
+            <div className="info-text">Earn Real</div>
+        </div> 
+        <div className="d-flex flex-column align-items-center">
+            <div className="info-box">
+            <img src={LearnRealStockMarketIcon}  width="100%" />
+            </div>
+            <div className="info-text">Risk Free</div>
+        </div>  
+        <div className="d-flex flex-column align-items-center">
+        <div className="info-box">
+        <img src={FunAndEntertainmentIcon} width="100%" />
+            </div>
+            <div className="info-text">Refer & Earn</div>
+        </div>  
+        {/* {[1,2,3,4].map((el)=>{
+          return(
+            <div className="d-flex flex-column ">
+                <img src={LearnRealStockMarketIcon} />
+              <div className="info-text">Refer & Earn</div>
+            </div>
+          )
+        })} */}
+      </div>
+      </div>
+
+    </div>
+  )
   return (
     <Container id="about">
       <ContentContainer>

@@ -15,8 +15,6 @@ const Main = ()=>{
   <div>
     <HeaderAndCarousel/>
     <About/>
-    <LevelsOfPlay/>
-    <SelectMarketSegment/>
     <HowToPlay/>
     <FAQs/>
     <Footer/>

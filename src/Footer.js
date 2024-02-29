@@ -14,19 +14,7 @@ const Footer = () => {
   return (
     <Container id="contact_us" >
       <ContentContainer>
-        <HalfContainerLeft>
-          <DownloadText>Download Mystox app Now</DownloadText>
-          <DownloadAppsContainer>
-            <DownloadAppButton src={DownloadGoogle} />
-            <DownloadAppButton src={DownloadApple} />
-          </DownloadAppsContainer>
-          <MyStoxText>Mystox</MyStoxText>
-          <VisionText>
-            Our Vision is empowering traders worldwide with a user-centric and
-            technologically advanced trading app, bridging financial expertise
-            and rewarding trading experiences.
-          </VisionText>
-        </HalfContainerLeft>
+        
         <HalfContainerRight isMobile={isMobile}>
           <ContactUsContainer>
             <ContactUsHeader>Contact us</ContactUsHeader>
@@ -52,9 +40,9 @@ export default Footer;
 const Container = styled.div`
   /* background: linear-gradient(202deg, #231f2d 0%, #2c1a3c 100%); */
   background-color: #2c1a3c;
-  min-height: 411px;
   background-image: url(${FooterSpiral});
   flex-wrap: wrap;
+  padding:50px 15px;
 `;
 
 const ContentContainer = styled.div`
@@ -79,7 +67,7 @@ const HalfContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  align-items: ${props => props.isMobile ?'start':'end'};
+  // align-items: ${props => props.isMobile ?'start':'end'};
 `;
 const DownloadText = styled.span`
   color: #fff;
@@ -178,7 +166,7 @@ const JargonContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: ${props=>props.isMobile ? '25px':'125px'};
+  margin-top:25px;
 `;
 
 const JargonText = styled.a`
