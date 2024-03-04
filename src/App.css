@@ -474,7 +474,8 @@ h6 {
   }
 }
 .level-explainaition{
-  min-height: 80vh;
+  /* min-height: 80vh; */
+  margin: 60px 20px;
 }
 
 .mobile-banner{
@@ -1843,7 +1844,7 @@ section {
 
 
 .toggle-image1{
-  animation: change1 5s infinite;
+  animation: change1 12s infinite;
   color:black
 }
 
@@ -1867,7 +1868,7 @@ section {
 
 
 .toggle-image2{
-  animation: change2 5s infinite;
+  animation: change2 12s infinite;
   color:black
 }
 
@@ -1882,7 +1883,7 @@ section {
 }
 
 .toggle-image3{
-  animation: change3 5s infinite;
+  animation: change3 12s infinite;
   
 }
 
@@ -1920,6 +1921,7 @@ section {
   font-weight: 900;
   font-size: 18px;
   line-height: 26px;
+  color: #343434 !important;
 }
 
 .level{
@@ -1932,10 +1934,11 @@ section {
 
 .about-info{
   background-color: #8644CD;
-  min-height: 220px;
   width: 100%;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  padding: 40px 0;
 }
 
 .info-box{
@@ -2057,4 +2060,53 @@ section {
   font-size: 18px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.about-heading{
+  color:#fff;
+  font-size: 32px;
+  font-weight: 900;
+  margin: 20px;
+  text-align: center;
+}
+
+.subheading{
+  color:#fff;
+  font-size: 22px;
+  margin: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.container-card{
+  background-color: #F6F6F6;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  height: 308px;
+
+}
+
+
+.main-card{
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  padding: 15px;
+  height: 298px;
+
+}
+
+.card-heading{
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: '600';
+  color:#343434;
+  margin: 10px 0;
+}
+
+.card-text{
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: '600';
+  color:rgba(52, 52, 52, 0.85);
 }

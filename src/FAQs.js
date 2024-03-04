@@ -14,18 +14,18 @@ const FAQs = () => {
       <h2 className="info-subtitle">See how it feel Buying companies you love. Dip you toes in Options</h2>
       <div class="logos1">
         <div class="logos-slide1">
-        {[1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,5,1,2,3,4,5].map((el)=>{
+        {[1,2,3,4,5,6,7,8,9,10,11,12,13,4,5,5,1,2,3,4,5].map((el)=>{
             return(
-                  <img src={require('./assets/stock_1.png')} />
+                  <img src={require(`./assets/${'stock_'+el}.png`)} />
             )
           })}
         </div>
       </div>
       <div class="logos2">
         <div class="logos-slide2">
-        {[1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,5,1,2,3,4,5].map((el)=>{
+        {[13,12,11,10,9,8,7,6,5,4,3,2,1,13,10,5,5,1,2,3,4,5].map((el)=>{
             return(
-                  <img src={require('./assets/stock_1.png')} />
+                  <img src={require(`./assets/${'stock_'+el}.png`)} />
             )
           })}
         </div>
