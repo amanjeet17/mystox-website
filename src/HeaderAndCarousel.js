@@ -84,8 +84,8 @@ const HeaderAndCarousel = () => {
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-12 d-flex flex-column justify-content-center pt-4 pt-lg-0   bg" data-aos="fade-up" data-aos-delay="200">
-          <h1>Enter a World of Virtual Fortune</h1>
-          <h2>Trade, strategize, and compete with other aspiring traders in a risk-free environment, honing your skills and unleashing your potential to conquer the virtual trading realm.</h2>
+          <h1>With our Skill based game learn how to enter the world of stock market.</h1>
+          <h2>Trade, strategize, and compete with other aspiring traders in a risk-free environment, honing your skills and unleashing your potential to conquer the trading realm.</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started scrollto" onClick={download}>Download now</a>
           </div>
