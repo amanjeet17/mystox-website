@@ -37,7 +37,9 @@ const HeaderAndCarousel = () => {
    }
   }
   useEffect(()=>{
-    // onPlayDownload()
+    // setTimeout(()=>{
+    //   onPlayDownload()
+    // },5000)
   },[])
 
   const download = ()=>{

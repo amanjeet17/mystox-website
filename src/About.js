@@ -18,7 +18,7 @@ export const About = () => {
   return(
     <div className="about-info">
       <h1 className="about-heading">India’s upcoming Stock-market Fantasy Gaming App </h1>
-      <h3 className="subheading">Trade, Learn , experience and earn without anylosses</h3>
+      <h3 className="subheading">Trade, Learn, Experience and Earn without any losses</h3>
       <div className="container">
         <div className="row justify-content-around">
           <div className="col-sm-4">

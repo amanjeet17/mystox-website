@@ -11,7 +11,7 @@ const FAQs = () => {
     <>
     <div className="stock-info">
       <h1 className="info-title">Fantasy Trade Stocks & Options</h1>
-      <h2 className="info-subtitle">See how it feel Buying companies you love. Dip you toes in Options</h2>
+      <h2 className="info-subtitle">See how it feel Buying companies you love. Dip your toes in Options</h2>
       <div class="logos1">
         <div class="logos-slide1">
         {[1,2,3,4,5,6,7,8,9,10,11,12,13,4,5,5,1,2,3,4,5].map((el)=>{
