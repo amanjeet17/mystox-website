@@ -1,7 +1,7 @@
 import React,{useEffect, useRef, useState} from 'react'
 import axios from 'axios';
 
-import { createChart } from "lightweight-charts";
+import { createChart, CrosshairMode, LineStyle , createChartEx, TickMarkType} from "lightweight-charts";
 import dayjs from 'dayjs';
 const holiday ={
     "17/04/2024":true,
@@ -91,7 +91,7 @@ const Chart = (props) =>{
                 });
             })
             dataChart.current = formatedData
-            // console.log('formatedData',formatedData)
+            console.log('formatedData',formatedData)
             if(dataChart.current.length>0){
                 series.setData(formatedData);
                 // chart.timeScale().fitContent();
@@ -107,6 +107,24 @@ const Chart = (props) =>{
             background: { type: 'solid', color: 'white' },
         },
         height: chartHeight,
+        localization: {
+            // dateFormat: 'yyyy-MM-dd HH:mm' // custom option
+            // timeFormatter: businessDayOrTimestamp => {
+            //     return dayjs(businessDayOrTimestamp*1000).format("YY-MM-DD HH:mm:ss"); //or whatever JS formatting you want here
+            // }
+            locale:'en-IN',
+            timeFormatter:(time)=>{
+                const date = new Date(time*1000);
+                const dateFormatter = new Intl.DateTimeFormat(navigator.language,{
+                    hour: "numeric",
+                    minute: "numeric",
+                    month: "short",
+                    day:"numeric",
+                    year:"2-digit"
+                })
+                return dateFormatter.format(date)
+            }
+        },
     };
     const container = document.getElementById('chart');
     const chart = createChart(container, chartOptions);
@@ -117,6 +135,66 @@ const Chart = (props) =>{
         wickUpColor: '#26a69a',
         wickDownColor: '#ef5350',
     });
+    chart.timeScale().applyOptions({
+        timeVisible:true,
+        tickMarkFormatter:(time, tickMarkType, locale)=>{
+            const date = new Date(time*1000);
+            // const myDate = date.toLocaleDateString("en-IN");
+            // return myDate
+            switch(tickMarkType){
+                case TickMarkType.Year:
+                    return date.getFullYear();
+
+                case TickMarkType.Month:
+                    const monthFormatter = new Intl.DateTimeFormat(locale,{month:"short"})
+                    return monthFormatter.format(date)
+
+                case TickMarkType.DayOfMonth:
+                    return date.getDate();
+
+                case TickMarkType.Time:
+                    const timeFormatter = new Intl.DateTimeFormat(locale,{
+                        hour: "numeric",
+                        minute: "numeric"
+                    })
+
+                    return timeFormatter.format(date)
+
+                case TickMarkType.TimeWithSeconds:
+                    const timeWithSecondsFormatter = new Intl.DateTimeFormat(locale,{
+                        hour: "numeric",
+                        minute: "numeric",
+                        second:'numeric'
+                    })
+                    return timeWithSecondsFormatter.format(date);
+                default:
+                    console.log('Oops sorry')
+
+            }
+
+        }
+    })
+    // chart.applyOptions({
+    //     crosshair: {
+    //       // Change mode from default 'magnet' to 'normal'.
+    //       // Allows the crosshair to move freely without snapping to datapoints
+    //       mode: CrosshairMode.Normal,
+
+    //       // Vertical crosshair line (showing Date in Label)
+    //       vertLine: {
+    //         width: 8,
+    //         color: "#C3BCDB44",
+    //         style: LineStyle.Solid,
+    //         labelBackgroundColor: "#9B7DFF",
+    //       },
+
+    //       // Horizontal crosshair line (showing Price in Label)
+    //       horzLine: {
+    //         color: "#9B7DFF",
+    //         labelBackgroundColor: "#9B7DFF",
+    //       },
+    //     },
+    //   });
     
     useEffect(()=>{
         fetchData()
@@ -135,6 +213,7 @@ const Chart = (props) =>{
     return(
         <>
         {/* <div id="chart"></div> */}
+
         </>
 
     )
