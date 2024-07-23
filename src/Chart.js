@@ -19,6 +19,7 @@ const holiday ={
 
 const Chart = (props) =>{
     let dataChart = useRef();
+    let loading = useRef(false)
     const urlParams = new URLSearchParams(window.location.search);
     const instrumentId = urlParams.get('instrument_id');
     const marketType = urlParams.get('market_type');
@@ -33,6 +34,9 @@ const Chart = (props) =>{
     };
 
     const fetchLTP = ()=>{
+        if(loading.current){
+            return
+        }
         axios.post('https://api.mystox.co.in/api/v1/instrument/real-time/',{instrument_ids:[instrumentId],market_type:marketType})
         .then((res)=>{
             // console.log('chartData',dataChart)
@@ -41,28 +45,23 @@ const Chart = (props) =>{
             const lastTime = data[data.length-1]['time'];
             const currentTime = dayjs().unix();
             let newTime = currentTime >= lastTime + 60 ? lastTime + 60 : lastTime
-            console.log('res',{
+            if(currentTime >= lastTime + 60 ){
+                fetchData()
+                return
+            }
+            dataChart.current[[data.length-1]]={
                 time: newTime,
                 close: candle.last_price,
-                open: candle.ohlc.open,
-                low: Math.min(candle.ohlc.low, candle.last_price),
-                high: Math.max(candle.ohlc.high, candle.last_price),
-            });
-            if(currentTime >= lastTime + 60 ){
-                dataChart.current= dataChart.current.concat([{
-                    time: newTime,
-                    close: candle.last_price,
-                    open: candle.ohlc.open,
-                    low: Math.min(candle.ohlc.low, candle.last_price),
-                    high: Math.max(candle.ohlc.high, candle.last_price),
-                }])
+                open: data[data.length-1].open,
+                low: Math.min(data[data.length-1].low, candle.last_price),
+                high: Math.max(data[data.length-1].high, candle.last_price),
             }
             series.update({
                 time: newTime,
                 close: candle.last_price,
-                open: candle.ohlc.open,
-                low: Math.min(candle.ohlc.low, candle.last_price),
-                high: Math.max(candle.ohlc.high, candle.last_price),
+                open: data[data.length-1].open,
+                low: Math.min(data[data.length-1].low, candle.last_price),
+                high: Math.max(data[data.length-1].high, candle.last_price),
             });
 
         }).catch((err)=>{
@@ -70,12 +69,13 @@ const Chart = (props) =>{
         })
     }
     const  fetchData = ()=>{
+        loading.current = true
         const startTime = dayjs().diff(dayjs(dayjs().format('YYYY-MM-DD')), 'second');
         const from_date = startTime > 33300 && !isHoliday()? dayjs().format('DD/MM/YYYY') : dayjs().subtract(1,'day').format('DD/MM/YYYY') 
         axios.post('https://api.mystox.co.in/api/v1/instrument/historical-data/',
             {
                 instrument_key:instrumentId,
-                from_datetime: from_date+" 08:59:00",
+                from_datetime: from_date+" 09:15:00",
                 to_datetime:from_date+' 15:30:00',
                 interval:'minute',
                 market_type:marketType
@@ -91,7 +91,7 @@ const Chart = (props) =>{
                 });
             })
             dataChart.current = formatedData
-            console.log('formatedData',formatedData)
+            // console.log('formatedData',formatedData)
             if(dataChart.current.length>0){
                 series.setData(formatedData);
                 // chart.timeScale().fitContent();
@@ -99,6 +99,8 @@ const Chart = (props) =>{
             }
         }).catch((err)=>{
             console.log('err',err)
+        }).finally(()=>{
+            loading.current = false
         })
     }
     const chartOptions = {
