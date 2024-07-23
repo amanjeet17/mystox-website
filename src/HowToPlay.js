@@ -8,37 +8,36 @@ import HowToPlayScreenshot3 from "./assets/HowToPlayScreenshot3.svg";
 const HowToPlay = () => {
   const isMobile = window.innerWidth<500
   return (
-    <Container id='how_to_play'>
-      <ContentContainer>
-        <TextContainer>
-          <HeaderText>How to play</HeaderText>
-          <SubHeaderText isMobile={isMobile}>
-            Enter into the thrilling world of Gamified Stock Market, a
-            strategy-based stock market game wherein you can create a virtual
-            portfolio from real stock market. Create your portfolio based on
-            your preferences of being bull or bear for your portfolio and win
-            real rewards and cash.
-          </SubHeaderText>
-        </TextContainer>
-        <ScreenshotArray>
-          <ScreenShotContainer>
-            <ScreenShotText>Select a contest</ScreenShotText>
-            <ScreenShotImage src={HowToPlayScreenshot1} />
-          </ScreenShotContainer>
-          <ScreenShotContainer>
-            <ScreenShotText>Create stockcase</ScreenShotText>
-            <ScreenShotImage src={HowToPlayScreenshot2} />
-          </ScreenShotContainer>
-          <ScreenShotContainer>
-            <ScreenShotText>Join contest</ScreenShotText>
-            <ScreenShotImage src={HowToPlayScreenshot3} />
-          </ScreenShotContainer>
-        </ScreenshotArray>
-        {/* <YoutubeVideoContainer isMobile={isMobile}>
-          <YouTubeVideo isMobile={isMobile} src={`https://drive.google.com/uc?export=download&id=1tbdgTmlV9kgTwWZw85DKsu4yK_TZoUmt`} />
-        </YoutubeVideoContainer> */}
-      </ContentContainer>
-    </Container>
+  <section>
+    <div className="container">
+    <div className="row">
+    <h1 className="level-heading">Levels of Play</h1>
+
+      <div class="col-sm-6 col-xs-12 row " data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-lg-12   hero-img" data-aos="zoom-in" data-aos-delay="200" style={{position:'relative'}}>
+        <img src={require('./assets/lop_1.png')} class="absolute toggle-image1"  alt="" width={'100%'}/>
+        <img src={require('./assets/lop_2.png')} class="absolute toggle-image2"  alt="" width={'100%'} />
+        <img src={require('./assets/lop_3.png')} class="absolute toggle-image3"  alt="" width={'100%'} />
+        </div>
+      </div>
+      <div class="row col-sm-6  col-xs-12 ms-1 level-explainaition" data-aos="zoom-in" data-aos-delay="200" >
+        <div className="toggle-image1 op-1 level">
+          <h3 className="level-name">Beginner Level</h3>
+          <div className="level-info">This contest level is designed for users to test their skills of stock selection and learn from their mistakes by reviewing to their peers</div>
+        </div>
+        <div className="toggle-image2 op-1 level">
+          <h3 className="level-name">Amateur Level</h3>
+          <div className="level-info">No stock can have a value allocation greater than 25% of the purse amount. Additionally, players are required to utilise at least 95% of the purse amount while creating their stock portfolio.</div>
+        </div>
+        <div className="toggle-image3 op-1 level">
+          <h3 className="level-name">Expert Level</h3>
+          <div className="level-info">It is buying and selling of financial instruments in order to make a profit. These instruments range from a variety of assets that are assigned a financial value that can go up or down – and you can trade on the direction they’ll take.</div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+    </section>
   );
 };
 

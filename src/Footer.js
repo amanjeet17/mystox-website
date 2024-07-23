@@ -14,33 +14,28 @@ const Footer = () => {
   return (
     <Container id="contact_us" >
       <ContentContainer>
-        <HalfContainerLeft>
-          <DownloadText>Download Mystox app Now</DownloadText>
-          <DownloadAppsContainer>
-            <DownloadAppButton src={DownloadGoogle} />
-            <DownloadAppButton src={DownloadApple} />
-          </DownloadAppsContainer>
-          <MyStoxText>Mystox</MyStoxText>
-          <VisionText>
-            Our Vision is empowering traders worldwide with a user-centric and
-            technologically advanced trading app, bridging financial expertise
-            and rewarding trading experiences.
-          </VisionText>
-        </HalfContainerLeft>
-        <HalfContainerRight isMobile={isMobile}>
-          <ContactUsContainer>
-            <ContactUsHeader>Contact us</ContactUsHeader>
-            <ContactUsEmail>Email : support@mystox.com</ContactUsEmail>
-          </ContactUsContainer>
+        <HalfContainerLeft isMobile={isMobile}>
+         
           <SocialButtonsContainer>
-            <SocialButton src={FacebookIcon} />
-            <SocialButton src={TwitterIcon} />
-            <SocialButton src={InstagramIcon} />
+            <SocialButton onClick={()=>window.open('https://www.facebook.com/people/MyStox/100090229607932/','_blank')} src={FacebookIcon} />
+            <SocialButton onClick={()=>window.open('https://www.linkedin.com/company/mystoxgames/','_blank')} src={TwitterIcon} />
+            <SocialButton onClick={()=>window.open('https://www.instagram.com/mystoxgames/','_blank')} src={InstagramIcon} />
           </SocialButtonsContainer>
           <JargonContainer isMobile={isMobile}>
+            <JargonText onClick={()=>navigate('/refund-cancel')}>Cancellation & Refund</JargonText>
             <JargonText onClick={()=>navigate('/privacy-policy')}>Privacy & Policy</JargonText>
             <JargonText href="http://docs.mystox.co.in/v1/terms-and-condition.pdf">Terms & Condition</JargonText>
           </JargonContainer>
+        </HalfContainerLeft>
+        <HalfContainerRight>
+        <ContactUsContainer>
+           <ContactUsContainer>
+            <ContactUsHeader>Contact us</ContactUsHeader>
+            <ContactUsEmail>Email : support@mystox.com</ContactUsEmail>
+          </ContactUsContainer>
+            <ContactUsHeader>Address</ContactUsHeader>
+            <ContactUsEmail>Wework Prestige Atlanta, 80 Feet Main Road Industrial Layout,Koramangala 1 A Block  Bengaluru Urban, Karnataka,560034</ContactUsEmail>
+          </ContactUsContainer>
         </HalfContainerRight>
       </ContentContainer>
     </Container>
@@ -52,9 +47,9 @@ export default Footer;
 const Container = styled.div`
   /* background: linear-gradient(202deg, #231f2d 0%, #2c1a3c 100%); */
   background-color: #2c1a3c;
-  min-height: 411px;
   background-image: url(${FooterSpiral});
   flex-wrap: wrap;
+  padding:50px 15px;
 `;
 
 const ContentContainer = styled.div`
@@ -79,7 +74,7 @@ const HalfContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  align-items: ${props => props.isMobile ?'start':'end'};
+  // align-items: ${props => props.isMobile ?'start':'end'};
 `;
 const DownloadText = styled.span`
   color: #fff;
@@ -141,8 +136,7 @@ const ContactUsHeader = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; 
-  letter-spacing: -0.32px;
+
 `;
 
 const ContactUsEmail = styled.span`
@@ -153,7 +147,7 @@ const ContactUsEmail = styled.span`
   font-weight: 400;
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.28px;
-  margin-top: 16.5px;
+  margin-bottom: 16.5px;
 `;
 
 const SocialButtonsContainer = styled.div`
@@ -170,6 +164,7 @@ const SocialButton = styled.img`
   height: 34px;
   flex-shrink: 0;
   margin-right: 24px;
+  cursor:pointer;
 `;
 
 const JargonContainer = styled.div`
@@ -178,7 +173,7 @@ const JargonContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: ${props=>props.isMobile ? '25px':'125px'};
+  margin-top:25px;
 `;
 
 const JargonText = styled.a`

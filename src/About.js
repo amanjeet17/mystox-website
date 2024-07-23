@@ -14,143 +14,76 @@ import FunAndEntertainmentIcon from "./assets/FunAndEntertainmentIcon.svg";
 
 export const About = () => {
   const isMobile = window.innerWidth<500
-  return (
-    <Container id="about">
-      <ContentContainer>
-        <FeaturesContainer style={{display:"none"}}>
-          <FeatureBox>
-            <FeatureImageContainer>
-              <FeatureImage src={ShieldCheck} />
-            </FeatureImageContainer>
-            <FeatureText>
-              Secure <FeatureTextGradient>100%</FeatureTextGradient> trusted
-            </FeatureText>
-          </FeatureBox>
-          <FeatureBox>
-            <FeatureImageContainer>
-              <FeatureImage src={CustomerSupport} />
-            </FeatureImageContainer>
-            <FeatureText>Customer Support</FeatureText>
-          </FeatureBox>
-          <FeatureBox>
-            <FeatureImageContainer>
-              <FeatureImage src={DailyWinCashIcon} />
-            </FeatureImageContainer>
-            <FeatureText>
-              Daily Win <FeatureTextGradient>Cash</FeatureTextGradient>
-            </FeatureText>
-          </FeatureBox>
-          <FeatureBox>
-            <FeatureImageContainer>
-              <FeatureImage src={EasyWithdrawalIcon} />
-            </FeatureImageContainer>
-            <FeatureText>Easy Withdrawals</FeatureText>
-          </FeatureBox>
-          <FeatureBox>
-            <FeatureImageContainer>
-              <FeatureImage src={ReferAndEarnIcon} />
-            </FeatureImageContainer>
-            <FeatureText>
-              Refer & <br />
-              Earn
-            </FeatureText>
-          </FeatureBox>
-        </FeaturesContainer>
-        <div style={{margin:'50px 0'}}>
 
-        <PrimaryHeaderText>
-          India’s one of the best trading gaming App
-        </PrimaryHeaderText>
-        <SecondaryHeaderText>
-          Learn and experience the stock market like never before
-        </SecondaryHeaderText>
+  return(
+    <div className="about-info">
+      <h1 className="about-heading">India’s upcoming Stock-market Fantasy Gaming App </h1>
+      <h3 className="subheading">Trade, Learn, Experience and Earn without any losses</h3>
+      <div className="container">
+        <div className="row justify-content-around">
+          <div className="col-sm-4">
+            <div className="container-card">
+              <div className="main-card">
+              <img src={require('./assets/about_1.png')}  />
+              <div className="card-heading">Get Fantasy stocks</div>
+              <div className="card-text">Unlock the world of endless possibilities with our fantasy stocks, where you can trade, strategize, and experience.</div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="container-card">
+              <div className="main-card">
+              <img src={require('./assets/about_2.png')}  />
+              <div className="card-heading">Earn on each referral</div>
+              <div className="card-text">Refer friends and earn money with every successful referral, making your journey with us even more rewarding.</div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="container-card">
+              <div className="main-card">
+              <img src={require('./assets/about_3.png')}  />
+              <div className="card-heading">Learn Real stock market</div>
+              <div className="card-text">Embark on an exciting journey of learning the real stock market while playing our engaging game.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row justify-content-around">
+          <div className="col-sm-4">
+            <div className="container-card">
+              <div className="main-card">
+              <img src={require('./assets/about_4.png')}  />
+              <div className="card-heading">Play risk free</div>
+              <div className="card-text">Trading fearlessly with our risk-free trading app, where you can learn, experiment, and perfect your strategies.</div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="container-card">
+              <div className="main-card">
+              <img src={require('./assets/about_5.png')}  />
+              <div className="card-heading">Earning without investing</div>
+              <div className="card-text">Zero investment required through our app, where you can learn, trade, and thrive without spending a penny.</div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="container-card">
+              <div className="main-card">
+              <img src={require('./assets/about_6.png')}  />
+              <div className="card-heading">Fun & Entertainment </div>
+              <div className="card-text">Endless entertainment with our intriguing trading app, which features exhilarating and market exploration!</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <HighlightsContainer>
-          <HighlightOuterBox isMobile={isMobile}>
-            <HighlightInnerBox>
-              <HighlightContentBox>
-                <GradientIconContainer>
-                  <HighlightIcon src={GetFantasyStocksIcon} />
-                </GradientIconContainer>
-                <HighlightHeading>Experience fantasy Trading</HighlightHeading>
-                <HighlightText>
-                  Unlock the world of endless possibilities with our fantasy
-                  stocks, where you can trade, strategize, and experience.
-                </HighlightText>
-              </HighlightContentBox>
-            </HighlightInnerBox>
-          </HighlightOuterBox>
-          <HighlightOuterBox isMobile={isMobile}>
-            <HighlightInnerBox>
-              <HighlightContentBox>
-                <GradientIconContainer>
-                  <HighlightIcon src={EarnOnEachReferralIcon} />
-                </GradientIconContainer>
-                <HighlightHeading>Earn on each referral</HighlightHeading>
-                <HighlightText>
-                  Refer friends and earn money with every successful referral,
-                  making your journey with us even more rewarding.
-                </HighlightText>
-              </HighlightContentBox>
-            </HighlightInnerBox>
-          </HighlightOuterBox>
-          <HighlightOuterBox isMobile={isMobile}>
-            <HighlightInnerBox>
-              <HighlightContentBox>
-                <GradientIconContainer>
-                  <HighlightIcon src={LearnRealStockMarketIcon} />
-                </GradientIconContainer>
-                <HighlightHeading>Craft Winning Portfolio</HighlightHeading>
-                <HighlightText>
-                Your journey to victory begins here. Skillfully assemble portfolios that outshine the competition.
-                </HighlightText>
-              </HighlightContentBox>
-            </HighlightInnerBox>
-          </HighlightOuterBox>
-          <HighlightOuterBox isMobile={isMobile}>
-            <HighlightInnerBox>
-              <HighlightContentBox>
-                <GradientIconContainer>
-                  <HighlightIcon src={PlayRiskFreeIcon} />
-                </GradientIconContainer>
-                <HighlightHeading>Risk Free Trading</HighlightHeading>
-                <HighlightText>
-                Dive into trading without financial risk. Test your strategies and enjoy the thrill of trading without losing a penny.
-                </HighlightText>
-              </HighlightContentBox>
-            </HighlightInnerBox>
-          </HighlightOuterBox>
-          <HighlightOuterBox isMobile={isMobile}>
-            <HighlightInnerBox>
-              <HighlightContentBox>
-                <GradientIconContainer>
-                  <HighlightIcon src={EarningWithoutInvestingIcon} />
-                </GradientIconContainer>
-                <HighlightHeading>Live Markets, Virtual Portfolios, Genuine Rewards</HighlightHeading>
-                <HighlightText>
-                Engage in real market scenarios and convert your virtual portfolio skills into genuine rewards.
-                </HighlightText>
-              </HighlightContentBox>
-            </HighlightInnerBox>
-          </HighlightOuterBox>
-          <HighlightOuterBox isMobile={isMobile}>
-            <HighlightInnerBox>
-              <HighlightContentBox>
-                <GradientIconContainer>
-                  <HighlightIcon src={FunAndEntertainmentIcon} />
-                </GradientIconContainer>
-                <HighlightHeading>Turn Fantasy Into Reality </HighlightHeading>
-                <HighlightText>
-                Refine your trading skills on our platform and apply them confidently to succeed in the real market.
-                </HighlightText>
-              </HighlightContentBox>
-            </HighlightInnerBox>
-          </HighlightOuterBox>
-        </HighlightsContainer>
-      </ContentContainer>
-    </Container>
-  );
+      </div>
+    </div>
+  )
+  
+  
 };
 
 const Container = styled.div`

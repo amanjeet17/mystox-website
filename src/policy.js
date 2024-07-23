@@ -53,9 +53,11 @@ export default function PrivacyPolicy(){
         </TopNavContainer>
         </ContentContainer>
         </Container >
+        <div className="container">
+
         <PolicyData />
          
-
+        </div>
         </>
     )
 }

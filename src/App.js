@@ -10,13 +10,15 @@ import FAQs from "./FAQs";
 import Footer from "./Footer";
 import { Route,Routes, BrowserRouter } from "react-router-dom";
 import PrivacyPolicy from "./policy";
+import RefundPolicy from "./refund";
+import Redirection from "./Redirection";
+import Chart from "./Chart";
+
 const Main = ()=>{
   return(
   <div>
     <HeaderAndCarousel/>
     <About/>
-    <LevelsOfPlay/>
-    <SelectMarketSegment/>
     <HowToPlay/>
     <FAQs/>
     <Footer/>
@@ -30,7 +32,10 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="" element={<Main/>}/>
+        {/* <Route path="/redirect" element={<Redirection/>}/> */}
         <Route path="/policy" element={<PrivacyPolicy/>}/>
+        <Route path="/chart" element={<Chart/>}/>
+        <Route path="/refund-cancel" element={<RefundPolicy/>}/>
         <Route path="/privacy-policy/" element={<PrivacyPolicy/>}/>
       </Routes>
       </BrowserRouter>

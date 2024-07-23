@@ -6,6 +6,69 @@ import { useCollapse } from "react-collapsed";
 
 const FAQs = () => {
   const isMobile = window.innerWidth<500
+
+  return(
+    <>
+    <div className="stock-info">
+      <h1 className="info-title">Fantasy Trade Stocks & Options</h1>
+      <h2 className="info-subtitle">See how it feel Buying companies you love. Dip your toes in Options</h2>
+      <div class="logos1">
+        <div class="logos-slide1">
+        {[1,2,3,4,5,6,7,8,9,10,11,12,13,4,5,5,1,2,3,4,5].map((el)=>{
+            return(
+                  <img src={require(`./assets/${'stock_'+el}.png`)} />
+            )
+          })}
+        </div>
+      </div>
+      <div class="logos2">
+        <div class="logos-slide2">
+        {[13,12,11,10,9,8,7,6,5,4,3,2,1,13,10,5,5,1,2,3,4,5].map((el)=>{
+            return(
+                  <img src={require(`./assets/${'stock_'+el}.png`)} />
+            )
+          })}
+        </div>
+      </div>
+    </div>
+
+
+    <div className="container mb-5">
+      <div className="row">
+
+        <div className="col-xs-12 col-sm-6">
+          <img src={require('./assets/get_the_app.png')} width={"100%"}/>
+        </div>
+        <div className="col-xs-12 col-sm-6">
+          <h1 className="getapp-heading">Get the app</h1>
+          <h3  className="getapp-text">Play to win on the go. The MyStox app is
+              available on the web, iOS, and Android.</h3>
+          <div className="row">
+            <div className="col-sm-4 col-6">
+              <img src={require('./assets/apple_download.png')} width={"100%"} onClick={()=>{
+                window.open(
+                  "https://apps.apple.com/in/app/mystox-fantasy-stock-gaming/id1668213556",
+                  '_blank' // <- This is what makes it open in a new window.
+                )
+              }}/>
+            </div>
+            <div className="col-sm-4 col-6">
+              <img src={require('./assets/google_download.png')} width={"100%"} onClick={()=>{
+                window.open(
+                  "https://play.google.com/store/apps/details?id=com.mystox",
+                  '_blank' // <- This is what makes it open in a new window.
+                )
+              }}/>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </>
+
+  )
   return (
     <Container>
       <ContentContainer>

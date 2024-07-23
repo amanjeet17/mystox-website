@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import LevelsOfPlayIcon from "./assets/levels_bg.png";
+import Carousel1 from "./assets/Carousel1.svg";
+import Carousel2 from "./assets/Carousel2.svg";
+import Carousel3 from "./assets/Carousel3.svg";
+import { Carousel } from "react-responsive-carousel";
 
 export const LevelsOfPlay = () => {
   return (
@@ -48,6 +52,48 @@ export const LevelsOfPlay = () => {
         </SubHeaderText>
 
       </ContentContainer>
+      <div>
+        <Carousel
+          autoPlay
+          showIndicators={true}
+          onChange={(...a) => console.log("onChange", a)}
+          onClickThumb={(...a) => console.log("onClickThumb", a)}
+          swipeable
+          infiniteLoop
+          showThumbs={false}
+          showStatus={false}
+          renderIndicator={(onClickHandler, isSelected, index, label) => {
+            const defStyle = { marginLeft: 20, color: 'white', cursor: 'pointer' };
+            const style = isSelected
+              ? { ...defStyle, color: 'red' }
+              : { ...defStyle };
+            return (
+              <span
+                style={style}
+                onClick={onClickHandler}
+                onKeyDown={onClickHandler}
+                value={index}
+                key={index}
+                role="button"
+                tabIndex={0}
+                aria-label={`${label} ${index + 1}`}
+              >
+                {'cust ' + index}
+              </span>
+            );
+          }}
+        >
+          <div>
+            <img src={Carousel1}  />
+          </div>
+          <div>
+            <img src={Carousel2} />
+          </div>
+          <div>
+            <img src={Carousel3} />
+          </div>
+        </Carousel>
+      </div>
     </Container>
   );
 };
